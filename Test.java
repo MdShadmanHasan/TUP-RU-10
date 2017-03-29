@@ -13,14 +13,14 @@ public class Test {
 
 		String gender = getUserInput.nextLine();
 
-		if (/*gender == 'M' || gender == 'm'*/ gender.equals("M") || gender.equals("m")) {
+		if (gender.equals("M") || gender.equals("m")) {
 			System.out.println("Welcome Mr. " + name);			
-		}	else if (/*gender == 'F' || gender == 'f'*/ gender.equals("F") || gender.equals("f")) {
+		}	else if (gender.equals("F") || gender.equals("f")) {
 			System.out.println("Are You Married?(Type 'Y' for Yes and 'N' for no.)");
 
 			String maritalstatus = getUserInput.nextLine();
 
-			if (/*maritalstatus == 'Y' || maritalstatus == 'y'*/ maritalstatus.equals("Y") || maritalstatus.equals("y")) {
+			if (maritalstatus.equals("Y") || maritalstatus.equals("y")) {
 				System.out.println("Welcome Mrs. " + name);
 			}	else {
 				System.out.println("Welcome Miss " + name);

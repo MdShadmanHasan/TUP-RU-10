@@ -13,17 +13,25 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the number of subjects: ");
         int numberOfSub = scan.nextInt();
-        double [] subjectArray = new double[numberOfSub];
-        for(int i = 0; i < numberOfSub; i++) {
-            System.out.print("Please enter the mark for subject " + (i + 1) + ":");
-            subjectArray[i] = scan.nextDouble();
+        while(true) {
+            System.out.println("Press Y when done.");
+            String done = scan.nextLine();
+            //String done = scan.next();
+            if (done.equalsIgnoreCase("y"))
+                break;
+            double[] subjectArray = new double[numberOfSub];
+            for (int i = 0; i < numberOfSub; i++) {
+                System.out.print("Please enter the mark for subject " + (i + 1) + ":");
+                subjectArray[i] = scan.nextDouble();
+            }
+
+            GradeCalc gc = new GradeCalc(subjectArray);
+
+            double cgpa = gc.getGrade();
+            System.out.printf("Your CGPA is : %.2f \n", cgpa);
+            System.out.println("Your Grade is: " + calcGrade(cgpa));
+
         }
-
-        GradeCalc gc = new GradeCalc(subjectArray);
-
-        double cgpa = gc.getGrade();
-        System.out.println("Your Grade is: " + cgpa);
-        System.out.println("Your Grade is: " + calcGrade(cgpa));
     }
 
     private static String calcGrade(double cgpa) {
